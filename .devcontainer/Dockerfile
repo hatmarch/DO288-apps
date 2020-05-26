@@ -17,4 +17,8 @@ RUN curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o 
     unzip awscliv2.zip && ./aws/install && rm awscliv2.zip && rm -rf ./aws 
     # && ln -s /usr/local/bin/aws2 /usr/local/bin/aws
     
+# install s2i
+RUN curl -L https://github.com/openshift/source-to-image/releases/download/v1.3.0/source-to-image-v1.3.0-eed2850f-linux-amd64.tar.gz | tar -zxvf - -C /usr/local/bin \
+    && chmod 755 /usr/local/bin/s2i && chmod 755 /usr/local/bin
+
 USER jboss
